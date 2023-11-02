@@ -29,7 +29,7 @@ warm_containers = "EAGER"
 stack_name = "json-web-token-signer"
 resolve_s3 = true
 s3_prefix = "json-web-token-signer"
-region = "sa-east-1"
+region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 disable_rollback = false
@@ -40,7 +40,7 @@ parameter_overrides = "Environment=default"
 stack_name = "json-web-token-signer"
 resolve_s3 = true
 s3_prefix = "json-web-token-signer"
-region = "sa-east-1"
+region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 disable_rollback = false

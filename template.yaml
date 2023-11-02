@@ -42,9 +42,9 @@ Parameters:
 Mappings:
   AuthSignerKeySecretArn:
     default:
-      arn: 'arn:aws:secretsmanager:sa-east-1:652613197255:secret:auth/Signer/Key-ScPC4v'
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-NS6KYH'
     prod:
-      arn: 'arn:aws:secretsmanager:sa-east-1:652613197255:secret:auth/Signer/Key-ScPC4v'
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-NS6KYH'
   ServiceDatabaseCredentialSecretArn:
     default:
       arn: 'arn:aws:secretsmanager:sa-east-1:652613197255:secret:service/Database/Credential-x1Gs8x'
