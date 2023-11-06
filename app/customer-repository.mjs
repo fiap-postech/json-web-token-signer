@@ -5,9 +5,9 @@ const databaseParams = await secretsManager.retrieve(process.env.DATABASE_SECRET
 
 const con = mysql.createConnection({
     host: await databaseParams.host,
-    user: await databaseParams.user,
+    user: await databaseParams.username,
     password: await databaseParams.password,
-    database: await databaseParams.database,
+    database: await databaseParams.schema,
     port: await databaseParams.port
 });
 
