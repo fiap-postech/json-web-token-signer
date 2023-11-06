@@ -4,18 +4,17 @@ import secretsManager from "./secrets-manager.mjs";
 
 export const handler = async (event) => {
     try {
-        // console.log(`Event: ${JSON.stringify(event)}`);
-
-        const customer = await customerRepository.findByDocument(event.body.document);
+        console.log(`Event: ${JSON.stringify(event)}`);
+        const body = JSON.parse(event.body);
+        const customer = await customerRepository.findByDocument(body.document);
         const payload = { uuid: customer.uuid };
-
-        // const payload = { uuid: event.body.document };
         const signerParams = await secretsManager.retrieve(process.env.SIGNER_SECRET_ID);
-
         const response = await jwt.sign(payload, signerParams);
-
         return {
-            ...response,
+            'headers': {
+                'Content-Type': 'application/json'
+            },
+            'body': JSON.stringify(response),
             'statusCode': 200
         };
     } catch (error) {
