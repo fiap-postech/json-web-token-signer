@@ -1,4 +1,4 @@
-import mysql from "mysql";
+import mysql from "mysql2";
 import secretsManager from "./secrets-manager.mjs";
 
 const databaseParams = await secretsManager.retrieve(process.env.DATABASE_SECRET_ID);
