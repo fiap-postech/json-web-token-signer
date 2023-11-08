@@ -49,7 +49,7 @@ Mappings:
     default:
       arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-Ln3csG'
     prod:
-      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-0h4AQr'
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-pIGcHw'
 
 Outputs:
   JsonWebTokenFunction:
