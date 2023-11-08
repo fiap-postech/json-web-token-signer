@@ -44,7 +44,7 @@ Mappings:
     default:
       arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-26kxlJ'
     prod:
-      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-LLxIuM'
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-TmvCUL'
   ServiceDatabaseCredentialSecretArn:
     default:
       arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-Ln3csG'
