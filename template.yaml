@@ -57,4 +57,5 @@ Outputs:
     Value: !GetAtt JsonWebTokenFunction.Arn
   JsonWebTokenFunctionIamRole:
     Description: "Implicit IAM Role created for Json Web Token function"
-    Value: !GetAtt JsonWebTokenFunctionRole.Arn
+#    Value: !GetAtt JsonWebTokenFunctionRole.Arn
+    Value: 'arn:aws:iam::271224312941:role/LabRole'
