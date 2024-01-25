@@ -20,42 +20,41 @@ Resources:
       Runtime: nodejs18.x
       Architectures:
         - x86_64
-      Role: 'arn:aws:iam::271224312941:role/LabRole'
-#      Policies:
-#        - AWSSecretsManagerGetSecretValuePolicy:
-#            SecretArn: !FindInMap [AuthSignerKeySecretArn, !Ref Environment, arn]
-#        - AWSSecretsManagerGetSecretValuePolicy:
-#            SecretArn: !FindInMap [ServiceDatabaseCredentialSecretArn, !Ref Environment, arn]
+      Policies:
+        - AWSSecretsManagerGetSecretValuePolicy:
+            SecretArn: !FindInMap [AuthSignerKeySecretArn, !Ref Environment, arn]
+        - AWSSecretsManagerGetSecretValuePolicy:
+            SecretArn: !FindInMap [ServiceDatabaseCredentialSecretArn, !Ref Environment, arn]
       Environment:
         Variables:
           SIGNER_SECRET_ID: "auth/Signer/Key"
           DATABASE_SECRET_ID: "service/Database/Credential"
           JWT_EXPIRATION: "1h"
 
-#Parameters:
-#  Environment:
-#    Type: String
-#    Default: default
-#    AllowedValues:
-#      - default
-#      - prod
+Parameters:
+  Environment:
+    Type: String
+    Default: default
+    AllowedValues:
+      - default
+      - prod
 
-#Mappings:
-#  AuthSignerKeySecretArn:
-#    default:
-#      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-26kxlJ'
-#    prod:
-#      arn: 'arn:aws:secretsmanager:us-east-1:271224312941:secret:auth/Signer/Key-nt6tnd'
-#  ServiceDatabaseCredentialSecretArn:
-#    default:
-#      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-Ln3csG'
-#    prod:
-#      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-pIGcHw'
+Mappings:
+  AuthSignerKeySecretArn:
+    default:
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-26kxlJ'
+    prod:
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Signer/Key-Bm9RsS'
+  ServiceDatabaseCredentialSecretArn:
+    default:
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-Ln3csG'
+    prod:
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:service/Database/Credential-pIGcHw'
 
 Outputs:
   JsonWebTokenFunction:
     Description: "Json Web Token Lambda Function ARN"
     Value: !GetAtt JsonWebTokenFunction.Arn
-#  JsonWebTokenFunctionIamRole:
-#    Description: "Implicit IAM Role created for Json Web Token function"
-#    Value: !GetAtt JsonWebTokenFunctionRole.Arn
+  JsonWebTokenFunctionIamRole:
+    Description: "Implicit IAM Role created for Json Web Token function"
+    Value: !GetAtt JsonWebTokenFunctionRole.Arn
