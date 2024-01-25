@@ -32,13 +32,13 @@ Resources:
           DATABASE_SECRET_ID: "service/Database/Credential"
           JWT_EXPIRATION: "1h"
 
-Parameters:
-  Environment:
-    Type: String
-    Default: default
-    AllowedValues:
-      - default
-      - prod
+#Parameters:
+#  Environment:
+#    Type: String
+#    Default: default
+#    AllowedValues:
+#      - default
+#      - prod
 
 #Mappings:
 #  AuthSignerKeySecretArn:
@@ -56,6 +56,6 @@ Outputs:
   JsonWebTokenFunction:
     Description: "Json Web Token Lambda Function ARN"
     Value: !GetAtt JsonWebTokenFunction.Arn
-  JsonWebTokenFunctionIamRole:
-    Description: "Implicit IAM Role created for Json Web Token function"
-    Value: !GetAtt JsonWebTokenFunctionRole.Arn
+#  JsonWebTokenFunctionIamRole:
+#    Description: "Implicit IAM Role created for Json Web Token function"
+#    Value: !GetAtt JsonWebTokenFunctionRole.Arn
